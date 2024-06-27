@@ -431,8 +431,6 @@
      * It contains basic examples of how to use the API
      * Note: all requests to backend are disabled in this demo, you should use your own backend
      */
-    console.log(Telegram.WebApp.initData(),'Telegram.WebApp.initData');
-    console.log(Telegram.WebApp.initDataUnsafe(),'Telegram.WebApp.initDataUnsafe');
 
     const DemoApp = {
         initData      : Telegram.WebApp.initData || '',
@@ -446,6 +444,8 @@
                 text      : 'CLOSE WEBVIEW',
                 is_visible: true
             }).onClick(DemoApp.close);
+                console.log(Telegram.WebApp.initData(),'Telegram.WebApp.initData');
+    console.log(Telegram.WebApp.initDataUnsafe(),'Telegram.WebApp.initDataUnsafe');
         },
         expand() {
             Telegram.WebApp.expand();
