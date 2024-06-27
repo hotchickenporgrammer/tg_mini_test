@@ -767,6 +767,8 @@
             });
             document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
             document.getElementById('theme_data').innerHTML   = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+            console.log(Telegram.WebApp.initData,'Telegram.WebApp.initData');
+            console.log(Telegram.WebApp.initDataUnsafe,'Telegram.WebApp.initDataUnsafe');
             DemoApp.checkInitData();
         }
     };
@@ -819,8 +821,7 @@
      * This part of code is used to initialize the demo app and set up the event handlers we need.
      */
 
-     console.log(Telegram.WebApp.initData(),'Telegram.WebApp.initData');
-     console.log(Telegram.WebApp.initDataUnsafe(),'Telegram.WebApp.initDataUnsafe');
+
 
     Telegram.WebApp.onEvent('themeChanged', function () {
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
