@@ -408,7 +408,7 @@
         <li>Selection: <a href="javascript:Telegram.WebApp.HapticFeedback.selectionChanged();">changed</a><br><br></li>
     </ul>
     <pre><code id="webview_data"></code></pre>
-    <pre><code id="webview_init_data"></code></pre>
+    <div id="webview_init_data"></div>
     <div class="hint">
         Data passed to webview.
         <span id="webview_data_status" class="status_need">Checking hash...</span>
@@ -769,8 +769,6 @@
             document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
             document.getElementById('webview_init_data').innerHTML = JSON.stringify(DemoApp.initData, null, 2);
             document.getElementById('theme_data').innerHTML   = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-            console.log(Telegram.WebApp.initData,'Telegram.WebApp.initData');
-            console.log(Telegram.WebApp.initDataUnsafe,'Telegram.WebApp.initDataUnsafe');
             DemoApp.checkInitData();
         }
     };
@@ -833,7 +831,8 @@
         document.getElementById('main_btn').style.display = 'block';
     }
     document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
-    document.getElementById('webview_data').innerHTML         = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+    document.getElementById('webview_data').innerHTML= JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+    document.getElementById('webview_init_data').innerHTML= JSON.stringify(DemoApp.initData, null, 2);
 
     document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
     document.getElementById('regular_link').setAttribute('href', document.getElementById('regular_link').getAttribute('href') + location.hash);
